@@ -72,20 +72,21 @@ namespace LeagueLanguageChanger
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Čeština",
-            "Deutsch",
-            "English",
-            "Español",
-            "Français",
-            "Italiano",
-            "Magyar",
-            "Polski",
-            "Português",
-            "Română",
-            "Türkçe",
-            "Ελληνικά",
-            "Русский",
-            "日本語"});
+            "cs_CZ",
+            "de_DE",
+            "en_US",
+            "es_ES",
+            "fr_FR",
+            "it_IT",
+            "hu_HU",
+            "pl_PL",
+            "pt_BR",
+            "ro_RO",
+            "tr_TR",
+            "el_GR",
+            "ru_RU",
+            "ja_JP",
+            "ko_KR"});
             this.comboBox1.Location = new System.Drawing.Point(69, 130);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);

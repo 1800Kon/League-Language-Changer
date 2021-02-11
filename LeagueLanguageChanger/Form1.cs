@@ -43,7 +43,7 @@ namespace LeagueLanguageChanger
         {
             object shDesktop = (object)"Desktop";
             WshShell shell = new WshShell();
-            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\LEAGUELANGUAGE.lnk";
+            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\"+ LanguageArg +".lnk";
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
             shortcut.Arguments = LanguageArg;
             shortcut.Description = "League shortcut to launch with certain language";
