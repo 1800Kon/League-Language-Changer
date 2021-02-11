@@ -7,8 +7,8 @@ namespace LeagueLanguageChanger
 {
     public partial class Form1 : Form
     {
-        String Filepath;
-        String LanguageArg;
+        String Filepath = null;
+        String LanguageArg = null;
         public Form1()
         {
             InitializeComponent();
@@ -41,14 +41,29 @@ namespace LeagueLanguageChanger
 
         private void CreateShortcut()
         {
-            object shDesktop = (object)"Desktop";
-            WshShell shell = new WshShell();
-            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\"+ LanguageArg +".lnk";
-            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
-            shortcut.Arguments = LanguageArg;
-            shortcut.Description = "League shortcut to launch with certain language";
-            shortcut.TargetPath = Filepath;
-            shortcut.Save();
+            if (LanguageArg != null)
+            {
+                if(Filepath != null)
+                {
+                    object shDesktop = (object)"Desktop";
+                    WshShell shell = new WshShell();
+                    string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\" + LanguageArg + ".lnk";
+                    IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
+                    shortcut.Arguments = "--locale=" + LanguageArg;
+                    shortcut.Description = "League shortcut to launch with certain language";
+                    shortcut.TargetPath = Filepath;
+                    shortcut.Save();
+                }
+                else
+                {
+                    button1.Text = "Set exe";
+                }
+               
+            }
+            else
+            {
+                button1.Text = "Set lang";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,6 +76,7 @@ namespace LeagueLanguageChanger
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 Filepath = choofdlog.FileName;
+                button2.Text = "Executable set";
             }
         }
 
