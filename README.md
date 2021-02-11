@@ -7,5 +7,6 @@
  * Once the file is downloaded open it
  * Choose your lanaguage
  * Select the League Of Legends executable (Inside the RiotGames/LeagueOfLegends folder, look for the file called LeagueClient.exe)
- * Click create shortcut and launch it
+ * Click create shortcut and it'll be created in your desktop
+ * Open the generated shortcut
  * Your client should now be in the language you chose
